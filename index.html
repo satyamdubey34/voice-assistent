@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myvoiceassistent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .text:focus {
+            border: 2px solid #000;
+            outline: none;
+        }
+    </style>
+    
+        
+        </head> 
+        <body>
+        
+        <div class="container">
+        
+        <div class="row justify-content-center mt-5"> 
+        <div class="col-6 d-flex flex-column justidy-content-center">
+        <textarea id="text-box" class="border-3 rounded-4 fs-mb-4 p-4 text" cols="30" rows="10"></textarea> 
+        <button class="btn btn-primary m-auto" id="btn"> 
+        <i class="fa-solid fa-microphone-lines fs-3"></i>
+        </button>
+        
+        </div>
+        
+        </div>
+        
+        </div> 
+        <script>
+        
+        const button = document.querySelector("#btn");
+        
+        const text_box = document.querySelector("#text-box"); 
+        button.addEventListener("click", () => {
+        const text = new SpeechSynthesisUtterance(text_box.value)
+        
+        speechSynthesis.speak(text);
+        
+        }); 
+</script>
